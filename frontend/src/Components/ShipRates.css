@@ -1,0 +1,100 @@
+.banner {
+  position: relative;
+  text-align: center;
+  padding: 50px 0;
+  background-color:rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.text18 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text19 {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.text19 span {
+  display: block;
+}
+
+.text20 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-2{
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width:600px;
+  transition: background-color 0.3s ease;
+  border-radius: 100px;
+  left: 50%;
+  right: 50%;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  margin-left: 300px;
+}
+
+.btn-2:hover {
+  background-color: #ff6600;
+}
+
+@media (min-width: 768px) {
+  .text19 {
+    font-size: 32px;
+  }
+  .text20 {
+    font-size: 18px;
+  }
+
+  .btn-2{
+    font-size: 18px;
+    padding: 16px 32px;
+    margin: 0 auto; /* Add this line to center the button horizontally */
+    position: absolute;
+    margin-left: 250px;
+    transform: translate(-50%, -50%);
+    margin-top: -60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text19 {
+    font-size: 32px;
+  }
+
+  .text20 {
+    font-size: 18px;
+  }
+
+  .btn-2{
+    font-size: 16px; /* Decrease the font size */
+    padding: 12px 24px; /* Decrease the padding */
+    margin: 0 auto; /* Add this line to center the button horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    transform: translate(-50%, -50%);
+    margin-top: 90px;
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,133 @@
+/* Add styles for the media page here */
+.about-us-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./background7.jpg');
+  background-size: cover;
+  z-index: -1;
+}
+
+.contentabout {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.contentabout h1 {
+  font-size: 45px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  text-align: left; /* Change text alignment to left */
+}
+
+.mission-vision-value-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.mission,
+.vision,
+.value {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-align: left; /* Change text alignment to left */
+  margin: 20px;
+  flex: 0 0 48%;
+  max-width: 48%;
+  padding: 15px; /* Add padding to prevent text from overflowing */
+  text-align: justify; /* Add text justification */
+  margin-left: -15px; /* Add negative margin to shift the content to the left */
+}
+
+.mission h2,
+.vision h2,
+.value h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.mission p,
+.vision p,
+.value p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Media Queries */
+
+/* Small devices (up to 768px) */
+@media (max-width: 768px) {
+  .contentabout h1 {
+    font-size: 32px;
+  }
+  .background-image {
+    height: 100%; /* Reset the height to cover the container */
+    background-image:url(./background7.jpg);
+  }
+  .mission,
+  .vision,
+  .value {
+    flex: 0 0 100%; /* Set to full width */
+    max-width: none; /* Remove the max-width to allow content to take full width */
+    margin-left: 0; /* Reset margin for small devices */
+  }
+
+}
+
+/* Medium devices (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .contentabout h1 {
+    font-size: 36px;
+  }
+
+  .mission-vision-value-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mission,
+  .vision,
+  .value {
+    flex: 0 0 100%;
+    max-width: none;
+    margin-left: 0; /* Reset margin for medium devices */
+  }
+}
+
+/* Large devices (993px and above) */
+@media (min-width: 993px) {
+  .contentabout h1 {
+    font-size: 45px;
+  }
+
+  .mission-vision-value-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .mission,
+  .vision,
+  .value {
+    flex: 0 0 30%;
+    max-width: 30%;
+    margin-left: -15px; /* Add negative margin for large devices as well */
+  }
+}

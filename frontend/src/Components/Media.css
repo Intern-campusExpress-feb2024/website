@@ -1,0 +1,38 @@
+/* Adjust the styles as needed */
+.media-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.media-heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.media-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.media-item {
+  width: calc(33.33% - 10px); /* Adjust the width to create some spacing between images */
+  margin: 5px; /* Adjust the spacing between images */
+}
+
+.media-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Media Query for Mobile and Responsive Layout */
+@media (max-width: 768px) {
+  .media-grid {
+    display: block;
+  }
+  .media-item {
+    width: 100%;
+    margin: 10px 0; /* Adjust the spacing between images */
+  }
+}
