@@ -1,13 +1,27 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+.flowchart {
+  display: inline-flex;
+  background-image: url("./assets/Ellipse\ 17.png");
+  justify-items: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.flow {
+  margin-top: 50px;
+  margin-left: 18rem;
+}
+
+.vectors {
+  margin-top: -8rem;
+  margin-left: 20rem;
+}
+.circle-image-5 {
+  width: "85px";
+  height: "85px";
+  background-size: "cover";
+  position: "absolute";
+  top: "50%";
+  left: "50%";
+  transform: "translate(-60%, -70%)";
 }
