@@ -1,8 +1,23 @@
-import { Paper, Text, Button, Group, MantineProvider } from "@mantine/core";
+import React, { useState, useEffect } from "react";
+import { Paper, Text, Button, MantineProvider } from "@mantine/core";
 import pincodeImage1 from "../assets/pincodeImage1.png";
 import rateCalcImg from "../assets/RateCalcImg.png";
 import location from "../assets/Group 72.svg";
+
 function Cards() {
+  const [isStacked, setIsStacked] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsStacked(window.innerWidth < 1139);
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <MantineProvider>
       <div
@@ -10,26 +25,22 @@ function Cards() {
           backgroundColor: "",
           padding: "5rem",
           display: "flex",
-          flexDirection: "row",
+          flexDirection: isStacked ? "column" : "row",
         }}
       >
         <Paper
           style={{
             borderRadius: "50px",
-            //padding: "5rem",
             backgroundColor: "white",
             backgroundImage: `url(${pincodeImage1})`,
             backgroundSize: "cover",
             width: "40vw",
             height: "70vh",
-            marginRight: "3rem",
-            //display: "flex",
-            // flexDirection: "column",
-            //justifyContent: "space-evenly",
+            marginRight: isStacked ? "0" : "3rem",
+            marginBottom: isStacked ? "3rem" : "0",
           }}
         >
           <div className="mx-3 my-5">
-            {" "}
             <Text
               fw={900}
               style={{
@@ -47,7 +58,6 @@ function Cards() {
           </div>
 
           <div>
-            {" "}
             <Text
               fw={900}
               style={{
@@ -73,13 +83,12 @@ function Cards() {
             style={{
               width: "250px",
               height: "250px",
-              marginLeft: "20rem",
+              marginLeft: isStacked ? "12rem" : "20rem",
               marginTop: "-3rem",
             }}
           />
 
           <div>
-            {" "}
             <Text
               style={{
                 color: "#000000",
@@ -119,20 +128,16 @@ function Cards() {
         <Paper
           style={{
             borderRadius: "50px",
-            //padding: "5rem",
             backgroundColor: "rgb(88, 50, 168,0.75)",
             backgroundImage: `url(${rateCalcImg})`,
             backgroundSize: "cover",
             width: "40vw",
             height: "70vh",
-            marginRight: "3rem",
-            //display: "flex",
-            // flexDirection: "column",
-            //justifyContent: "space-evenly",
+            marginRight: isStacked ? "0" : "3rem",
+            marginBottom: isStacked ? "0" : "0",
           }}
         >
           <div className="mx-3 my-5">
-            {" "}
             <Text
               fw={900}
               style={{
@@ -150,7 +155,6 @@ function Cards() {
           </div>
 
           <div>
-            {" "}
             <Text
               fw={900}
               style={{
@@ -171,7 +175,6 @@ function Cards() {
           </div>
 
           <div>
-            {" "}
             <Text
               style={{
                 color: "#000000",

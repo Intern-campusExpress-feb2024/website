@@ -18,8 +18,8 @@ function App() {
       </div>
       {/* <Login></Login>
       <LoginOTP></LoginOTP> */}
-      {/* <Cards></Cards> */}
-      <Flowchart></Flowchart>
+      <Cards></Cards>
+      {/* <Flowchart></Flowchart> */}
     </Router>
   );
 }
