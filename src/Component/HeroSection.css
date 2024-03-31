@@ -1,0 +1,90 @@
+.hero {
+    display: flex;
+    flex-direction: row; /* Display hero-left and hero-right as columns */
+    background-color: #f0f0f0; /* Background color */
+    height: 100vh; /* Full viewport height */
+    padding: 50px 0; /* Adjust padding as needed */
+  }
+  
+  .hero-left,
+  .hero-right {
+    flex: 1; /* Share equal width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-left {
+    background-color: #f0f0f0; /* Background color for left column */
+  }
+  
+  .hero-right {
+    background-color: #fff; /* Background color for right column */
+  }
+  
+  .hero-heading {
+    font-size: 72px; /* Larger text size */
+    color: #333; /* Darker color */
+    text-transform: uppercase; /* All caps */
+    margin-bottom: 30px; /* Increased spacing */
+  }
+  
+  .changing-text-grid {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr); /* Four rows */
+  }
+  
+  .changing-text {
+    font-size: 72px; /* Smaller text size */
+    color: #666; /* Slightly darker color */
+    margin-bottom: 10px; /* Increased spacing between rows */
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  .changing-text.active {
+    opacity: 1; /* Show active text */
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border: 2px solid purple;
+    border-radius: 20px;
+    margin-right: 10px;
+    width: 300px;
+  }
+  
+  .search-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #7b68ee; /* Darker purple on hover */
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container */
+    max-height: 100%; /* Ensure the image doesn't exceed the container */
+  }
+  
+.banner {
+  background-color: purple;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
