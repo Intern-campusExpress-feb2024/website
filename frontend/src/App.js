@@ -7,6 +7,7 @@ import UserRegistration from "./pages/UserRegistration";
 import OrderCreation from "./pages/OrderCreation";
 import LoginOTP from "./Components/LoginOTP";
 import Flowchart from "./Components/Flowchart";
+import HappyClients from "./Components/HappyClients";
 function App() {
   return (
     <Router>
@@ -18,8 +19,9 @@ function App() {
       </div>
       {/* <Login></Login>
       <LoginOTP></LoginOTP> */}
-      <Cards></Cards>
+      {/* <Cards></Cards> */}
       {/* <Flowchart></Flowchart> */}
+      <HappyClients></HappyClients>
     </Router>
   );
 }

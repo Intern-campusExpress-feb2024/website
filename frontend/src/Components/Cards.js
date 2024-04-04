@@ -3,7 +3,7 @@ import { Paper, Text, Button, MantineProvider } from "@mantine/core";
 import pincodeImage1 from "../assets/pincodeImage1.png";
 import rateCalcImg from "../assets/RateCalcImg.png";
 import location from "../assets/Group 72.svg";
-
+import arrow from "../assets/Ornament 38.svg";
 function Cards() {
   const [isStacked, setIsStacked] = useState(false);
 
@@ -81,8 +81,8 @@ function Cards() {
             src={location}
             alt="Location Icon"
             style={{
-              width: "250px",
-              height: "250px",
+              width: "300px",
+              height: "300px",
               marginLeft: isStacked ? "12rem" : "20rem",
               marginTop: "-3rem",
             }}
@@ -112,7 +112,7 @@ function Cards() {
           <Button
             style={{
               alignSelf: "center",
-              marginTop: "6rem",
+              marginTop: "4rem",
               marginLeft: "1rem",
               backgroundColor: "#902FC6",
               color: "white",
@@ -210,6 +210,15 @@ function Cards() {
             Explore
           </Button>
         </Paper>
+        <img
+          src={arrow}
+          style={{
+            width: "100px",
+            height: "100px",
+            marginTop: "24rem",
+            marginLeft: "-9rem",
+          }}
+        />
       </div>
     </MantineProvider>
   );
