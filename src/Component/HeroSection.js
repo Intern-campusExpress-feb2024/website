@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HeroSection.css'; // Import your CSS file
+import group1 from './Group 46.png';
 
 const HeroSection = () => {
   const [textIndex, setTextIndex] = useState(0);
@@ -27,12 +28,12 @@ const HeroSection = () => {
         </div>
         </div>
       <div className="hero-right">
-        
-      </div>
       <section className="hero"> 
       <div className="hero-image">
-        
+      <img src={group1} alt="Description" />
         </div></section>
+      </div>
+      
     </section>
 
   );

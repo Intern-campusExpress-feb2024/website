@@ -1,10 +1,10 @@
 import React from 'react';
 import './Navbarstyles.css'; // Import your CSS file
-
+import group1 from './webpic 1logo.png';
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="logo">Company Logo</div>
+      <div className="logo"><img src={group1} alt="Description" /></div>
       <ul className="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
