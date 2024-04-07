@@ -19,7 +19,7 @@ const HeroSection = () => {
       <div className="hero-left">
         <div className='text'>
         <h2 className="hero-heading">EXPERIENCE</h2>
-        <h1 className="changing-text">{texts[textIndex]}</h1>
+        <h2 className="changing-text">{texts[textIndex]}</h2>
         <h2 className="hero-heading">LOGISTICS</h2>
         <form className="search-form">
           <input type="text" placeholder="Enter Tracking Number / PIN Code" className="search-input" />
@@ -28,13 +28,15 @@ const HeroSection = () => {
         </div>
         </div>
       <div className="hero-right">
-      <section className="hero"> 
-      <div className="hero-image">
+      <div className='image-container'>
+      <div className="image-container img">
       <img src={group1} alt="Description" />
-        </div></section>
+        </div>
+        </div>
+ 
       </div>
       
-    </section>
+           </section>
 
   );
 }

@@ -2,49 +2,50 @@
   display: flex;
   background-color: #e1c2e5; /* Background color */
   height: 100vh; /* Full viewport height */
-  padding: 50px 0; /* Adjust padding as needed */
+  padding: 150px 0; /* Adjust padding as needed */
+  
 }
 
 .hero-left {
-  flex: 1.5; /* 65% width */
+  flex: 0.5; /* 65% width */
   background-color:#e1c2e5; /* Background color for left column */
   display: flex;
   justify-content: center;
   align-items: center;
+margin-top:180px;
+margin-left: 50px;
 }
 
+
 .hero-right {
-  flex: 1; /* 35% width */
-  background-color: #fff; /* Background color for right column */
+  flex: 0.5; /* 35% width */
+  margin-top:auto;
+  background-color: #e1c2e5; /* Background color for right column */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-image {
-  max-width: 100%; /* Ensure image doesn't exceed container */
-  max-height: 100%; /* Ensure image doesn't exceed container */
-  height: auto; /* Maintain aspect ratio */
-  width: auto; /* Ensure image scales down properly */
-}
 
 .hero-heading {
-  font-size: 72px; /* Larger text size */
+  font-size: 78px; /* Larger text size */
   color: black; /* Darker color */
   text-transform: uppercase; /* All caps */
-  margin-bottom: 30px; /* Increased spacing */
+  margin-bottom: 20px;
 }
 
 .changing-text-grid {
   display: grid;
   grid-template-rows: repeat(4, 1fr); /* Four rows */
+
 }
 
 .changing-text {
-  font-size: 60px; /* Smaller text size */
+  font-size: 78px; /* Smaller text size */
   color: purple; /* Slightly darker color */
-  margin-bottom: 10px; /* Increased spacing between rows */
   transition: opacity 0.3s ease; /* Smooth transition */
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .changing-text.active {
@@ -57,24 +58,30 @@
 }
 
 .search-input {
-  padding: 10px;
+  padding: 17px;
   border: 2px solid purple;
   border-radius: 20px;
-  margin-right: 10px;
-  width: 300px;
+  width: 450px;
+  
 }
 
 .search-button {
   background-color: purple;
   color: white;
   border: none;
-  padding: 10px 20px;
+  font-size: 15px;
+  margin-left: 10px;
+  padding: 20px 30px;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .search-button:hover {
   background-color: #7b68ee; /* Darker purple on hover */
+}
+.hero-image {
+  max-width: 100%; /* Ensure image doesn't exceed container */
+  max-height: 100%; /* Ensure image doesn't exceed container */
 }
 
 .image-container {

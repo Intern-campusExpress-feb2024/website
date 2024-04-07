@@ -4,6 +4,9 @@
     align-items: center;
     padding: 20px;
     background: #e1c2e5; /* Light purple gradient background */
+  width:100%;
+  position:fixed;
+  
   }
   
   .logo {
