@@ -1,0 +1,109 @@
+:root {
+  --base-color: #c1d9e4;
+  --base-dark-color: #3c587c;
+  --accent-color: #1c7ff0;
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--base-color);
+  padding: 20px;
+  font-family: 'proxima-nova';
+}
+
+a {
+  text-decoration: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+
+.controls,
+.order-tracker {
+  margin: 10px auto;
+  width: 645px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+}
+
+.order-tracker {
+  padding: 40px;
+}
+
+.order-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-info__number {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.order-info__number a:last-child {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.order-info__details__arrival-date,
+.order-info__details__tracking-number {
+  display: block;
+  text-align: right;
+}
+
+.order-info__details__tracking-number a {
+  font-weight: 700;
+  color: var(--black-color);
+}
+
+.order-status__progress {
+  margin: 45px 0;
+}
+
+.order-status__status-info {
+  font-size: 14px;
+}
+
+.order-status__status-info ol {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.order-status__status-info__step {
+  display: inline-flex;
+  padding: 0.1px;
+}
+
+.icon {
+  width: 45%;
+  margin-right: 10px;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-check-bubble,
+.checkmark,
+.progress-bar {
+  visibility: hidden;
+}
+
+.accented {
+  fill: var(--accent-color);
+  stroke: var(--accent-color);
+}
