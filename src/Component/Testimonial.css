@@ -1,0 +1,62 @@
+.testimonial-carousel-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #e1c2e5;
+}
+
+.testimonial-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease;
+  padding: 0 40px; /* Add space between cards */
+}
+
+.testimonial-carousel-item {
+  flex: 0 0 auto;
+  margin-right: 20px; /* Add space between cards */
+  padding: 20px; /* Add padding inside cards */
+  width: calc(100% - 40px); /* Adjust card width */
+  max-width: 300px; /* Set maximum card width */
+  background-color: #7E57C2; /* Purple background */
+  color: white; /* White text color */
+  border: 20px solid white; /* Thick white border */
+  border-radius: 15px; /* Rounded corners */
+  box-sizing: border-box; /* Include border in width calculation */
+}
+
+.testimonial-carousel-item.active {
+  width: 350px;
+  height: 375px;
+}
+
+@media (min-width: 600px) {
+  .testimonial-carousel-item {
+      max-width: 350px; /* Adjust maximum card width for larger screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-carousel-item {
+      max-width: 275px; /* Adjust maximum card width for smaller screens */
+  }
+}
+.testimonial-carousel-container {
+  overflow: hidden;
+}
+
+.testimonial-carousel {
+  display: flex;
+}
+
+.testimonial-carousel-item {
+  flex: 0 0 auto;
+  margin-right: 40px;
+  padding: 20px;
+  background-color: purple;
+  color: white;
+  border: 20px solid white;
+}
+
+.testimonial-carousel-item.active {
+  transform: translateX(-100%);
+}

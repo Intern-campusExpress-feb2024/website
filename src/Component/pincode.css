@@ -1,0 +1,7 @@
+.pinflex{
+    display: flex;
+    background-color: #e1c2e5; /* Background color */
+    height: 100vh; /* Full viewport height */
+    padding: 150px 0; /* Adjust padding as needed */
+    
+  }

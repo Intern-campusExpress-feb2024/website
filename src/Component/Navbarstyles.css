@@ -1,0 +1,77 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #e1c2e5; /* Light purple gradient background */
+  width:100%;
+  position:fixed;
+  
+  }
+  
+  .logo {
+    color: black;
+    font-weight: bold;
+    font-size: 2 rem;
+    margin-right: 20px; /* Increase spacing between logo and nav links */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    font-size: 17.5px; /* Half of the current font size */
+    font-weight: bold;
+    align-items: center;
+    margin-left: 30px;
+  }
+  
+  
+  .nav-links li {
+    margin-right: 65px; /* Increase spacing between nav links */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: purple;
+    text-decoration: underline;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 0%;
+ 
+  }
+  
+  .buttons button {
+    margin-left: 40px; /* Less spacing between buttons */
+    width: 150px; /* Increase button width */
+  }
+  
+  .orange-button {
+    background: linear-gradient(to right, orange, #ff8c00); /* Orange gradient */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 30px; /* Adjust padding */
+    cursor: pointer;
+  }
+  
+  .purple-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 30px; /* Adjust padding */
+    cursor: pointer;
+  }
+  
+  .purple-button:hover {
+    background-color: #6a0dad; /* Darker purple on hover */
+  }
+  

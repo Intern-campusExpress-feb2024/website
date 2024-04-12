@@ -1,0 +1,133 @@
+.hero {
+  display: flex;
+ background-color: white;/* Background color */
+  height: 100vh; /* Full viewport height */
+  padding: 150px 0; /* Adjust padding as needed */
+  
+}
+
+.hero-left {
+ flex: 0.6;
+  background-color: #f4f4f4; /* Adjust background color as needed */
+padding:5px;
+height: 60vh;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #ccc; /* Add border to create the rectangular shape */
+  border-radius: 15px; /* Adjust border-radius for curved corners */
+margin-top:100px;
+margin-left:250px;
+margin-right:50px;
+max-width: 600px;
+max-height:700px;
+}
+
+
+.hero-right {
+  flex:0.5;
+  margin-top:auto;
+  margin-left: 50px;
+  background-color: white; /* Background color for right column */
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hero-heading {
+  font-size: 78px; /* Larger text size */
+  color: black; /* Darker color */
+  text-transform: uppercase; /* All caps */
+  margin-bottom: 20px;
+}
+
+.changing-text-grid {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr); /* Four rows */
+
+}
+
+
+.hero-image {
+  max-width: 100%; /* Ensure image doesn't exceed container */
+  max-height: 100%; /* Ensure image doesn't exceed container */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.image-container img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container */
+  max-height: 100%; /* Ensure the image doesn't exceed the container */
+}
+
+
+
+/* Styling for the form container */
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px; /* Adjust the border-radius for curved corners */
+  max-width: 700px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Styling for labels */
+label {
+  display: block;
+  color:black;
+  font-size: 1rem; /* Increase font size */
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+label1 {
+  display: block;
+  font-size: 0.7em; /* Increase font size */
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Styling for text inputs */
+input[type="text"] {
+  width: 100%; /* Take the full width of the container */
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Styling for the submit button */
+button[type="submit"] {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Center the button horizontally */
+}
+.heading{
+  background-color: purple;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+align-items: left;
+  margin: 0 auto; /* Center the button horizontally */
+}
+.background-image {
+  position: absolute; /* Set position to absolute */
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 10%;
+
+  background-size: cover;
+  z-index: -1; /* Set z-index to -1 to position it behind other content */
+}
