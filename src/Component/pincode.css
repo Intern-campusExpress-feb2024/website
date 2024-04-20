@@ -1,7 +1,151 @@
-.pinflex{
-    display: flex;
-    background-color: #e1c2e5; /* Background color */
-    height: 100vh; /* Full viewport height */
-    padding: 150px 0; /* Adjust padding as needed */
-    
-  }
+.hero-pincode {
+  display: flex;
+ background-color: white;/* Background color */
+  height: 100vh; /* Full viewport height */
+  padding: 150px 0; /* Adjust padding as needed */
+  
+}
+.hero-left-pincode {
+  position: relative; /* Set position to relative */
+  flex: 0.75;
+  display: flex;
+  background-color: #f4f4f4;
+  padding: 5px;
+  height: 60vh;
+  justify-content: center;
+  align-items: right;
+  border: 5px solid #ccc;
+  border-radius: 15px;
+  margin-left: 50px;
+  margin-top: 100px;
+  max-width: 550px;
+  max-height: auto;
+  z-index: 1;
+}
+
+.overlay-block {
+  flex-direction: column;
+  position: absolute; /* Set position to absolute */
+  top: -50px; /* Adjust to position the overlay block slightly above the form container */
+  left: 0;
+  height: 70px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: purple; /* Semi-transparent black color */
+  z-index: 1; /* Set a higher z-index than form container to ensure it's displayed above */
+}
+
+
+.form-container {
+  flex-direction: column;
+  position: relative; /* Set position to relative */
+  z-index: 1; /* Set a higher z-index to ensure it's above the overlay block */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+.hero-right-pincode {
+  flex: 0.50; /* Change flex value to 0.30 to take 30% of the page */
+  margin-top: auto;
+  margin-left: 50px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container-pincode {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.hero-heading {
+  font-size: 78px; /* Larger text size */
+  color: black; /* Darker color */
+  text-transform: uppercase; /* All caps */
+  margin-bottom: 20px;
+}
+
+
+
+
+.hero-image {
+  max-width: 100%; /* Ensure image doesn't exceed container */
+  max-height: 100%; /* Ensure image doesn't exceed container */
+}
+
+.image-container-pincode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.image-container-img{
+  max-width: 100%; /* Ensure the image doesn't exceed the container */
+  max-height: 100%; /* Ensure the image doesn't exceed the container */
+}
+
+
+
+
+/* Styling for labels */
+label {
+  display: block;
+  color:black;
+  font-size: 1rem; /* Increase font size */
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+label1 {
+  display: block;
+  font-size: 0.75rem; /* Increase font size */
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Styling for text inputs */
+input[type="text"] {
+  width: 100%; /* Take the full width of the container */
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Styling for the submit button */
+button[type="submit"] {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Center the button horizontally */
+}
+.heading{
+  background-color: purple;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+align-items: left;
+  margin: 0 auto; /* Center the button horizontally */
+}
+.background-image {
+  position: absolute; /* Set position to absolute */
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 10%;
+
+  background-size: cover;
+  z-index: -1; /* Set z-index to -1 to position it behind other content */
+}
