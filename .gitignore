@@ -1,3 +1,25 @@
 node_modules/
 *.env
 
+/frontend/src/Components/About.css
+/frontend/src/Components/About.js
+/frontend/src/Components/Aboutus.css
+/frontend/src/Components/AboutUs.js
+/frontend/src/Components/ClientsSection.js
+/frontend/src/Components/ClientsSection.css
+/frontend/src/Components/Contact.css
+/frontend/src/Components/Contact.js
+/frontend/src/Components/ContactPage.js
+/frontend/src/Components/Footer.css
+/frontend/src/Components/Footer.js
+/frontend/src/Components/HeroSection.css
+/frontend/src/Components/HeroSection.js
+/frontend/src/Components/Home.css
+/frontend/src/Components/Home.js
+/frontend/src/Components/Media.css
+/frontend/src/Components/Media.js
+/frontend/src/Components/MediaPage.js
+/frontend/src/Components/Navbar.css
+/frontend/src/Components/Navbar.js
+/frontend/src/Components/PinCode.css
+/frontend/src/Components/PinCode.js

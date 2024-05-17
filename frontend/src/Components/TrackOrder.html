@@ -1,120 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tracking Page</title>
-<style>
-  /* Optional CSS for styling */
-  body {
-    font-family: Arial, sans-serif;
-  }
-  form {
-    margin-top: 20px;
-  }
-  #result {
-    margin-top: 20px;
-  }
-  .progress-bar {
-    width: 0%;
-    height: 20px;
-    background-color: #1c7ff0; /* Change the color here */
-    margin-top: 10px;
-  }
-</style>
-</head>
-<body>
-  <h1>Tracking Page</h1>
-  <form id="trackForm">
-    <label for="lrNumber">Enter LR Number:</label>
-    <input type="text" id="lrNumber" name="lrNumber" required>
-    <button type="submit">Track</button>
-  </form>
-  <div id="result"></div>
-  <div class="progress-bar" id="progressBar"></div>
-
-  <script>
-    // JavaScript for handling form submission and API request
-    document.getElementById('trackForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form submission
-      
-      var lrNumber = document.getElementById('lrNumber').value.trim(); // Get LR number from input field
-      
-      // Make API request
-      fetch('https://btob.api.delhivery.com/v2/track/' + lrNumber)
-      .then(response => response.json())
-      .then(data => {
-        // Handle response
-        displayTrackingDetails(data);
-      })
-      .catch(error => {
-        // Handle error
-        console.error('Error fetching tracking details:', error);
-        document.getElementById('result').innerHTML = 'Error fetching tracking details. Please try again.';
-      });
-    });
-
-    // Function to display tracking details and update progress bar
-    function displayTrackingDetails(data) {
-      var resultDiv = document.getElementById('result');
-      resultDiv.innerHTML = ''; // Clear previous result
-      
-      // Check if tracking information is available
-      if (data) {
-        var html = '<h2>Tracking Details</h2>';
-        html += '<p><strong>Status:</strong> ' + data.status + '</p>';
-        html += '<p><strong>Location:</strong> ' + data.location + '</p>';
-        html += '<p><strong>Timestamp:</strong> ' + data.timestamp + '</p>';
-        html += '<p><strong>LR Number:</strong> ' + data.lrnum + '</p>';
-        html += '<p><strong>Origin City:</strong> ' + data.origin_city + '</p>';
-        html += '<p><strong>Destination City:</strong> ' + data.destination_city + '</p>';
-        html += '<p><strong>Scan Remark:</strong> ' + data.scan_remark + '</p>';
-        html += '<p><strong>MWBN:</strong> ' + data.mwbn + '</p>';
-        html += '<p><strong>Pickup Date:</strong> ' + data.pickup_date + '</p>';
-        html += '<p><strong>Manifested Date:</strong> ' + data.manifested_date + '</p>';
-        html += '<p><strong>Delivered Date:</strong> ' + data.delivered_date + '</p>';
-        html += '<p><strong>Estimated Date:</strong> ' + data.estimated_date + '</p>';
-        html += '<p><strong>Promised Delivery Date:</strong> ' + data.promised_delivery_date + '</p>';
-        html += '<p><strong>Total Weight:</strong> ' + data.total_weight + '</p>';
-        html += '<p><strong>Client Name:</strong> ' + data.client_name + '</p>';
-        html += '<p><strong>Origin Branch:</strong> ' + data.origin_branch + '</p>';
-        html += '<p><strong>Destination Branch:</strong> ' + data.destination_branch + '</p>';
-        resultDiv.innerHTML = html;
-        
-        // Update progress bar based on status
-        updateProgressBar(data.status);
-      } else {
-        resultDiv.innerHTML = 'Tracking details not found.';
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking Page</title>
+    <style>
+      /* Optional CSS for styling */
+      body {
+        font-family: Arial, sans-serif;
       }
-    }
-
-    // Function to update progress bar
-    function updateProgressBar(status) {
-      var progressBar = document.getElementById('progressBar');
-      switch (status.toLowerCase()) {
-        case 'manifested':
-          progressBar.style.width = '20%';
-          break;
-        case 'in transit':
-          progressBar.style.width = '40%';
-          break;
-        case 'pending':
-          progressBar.style.width = '60%';
-          break;
-        case 'dispatched':
-          progressBar.style.width = '80%';
-          break;
-        case 'delivered':
-          progressBar.style.width = '100%';
-          break;
-        case 'not_picked':
-          progressBar.style.width = '10%'; // You can adjust this value as needed
-          break;
-        default:
-          progressBar.style.width = '0%'; // Reset progress bar if status is unknown
-          break;
+      form {
+        margin-top: 20px;
       }
-    }
-  </script>
-</body>
+      #result {
+        margin-top: 20px;
+      }
+      .progress-bar {
+        width: 0%;
+        height: 20px;
+        background-color: #1c7ff0; /* Change the color here */
+        margin-top: 10px;
+        transition: ease-in-out 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tracking Page</h1>
+    <form id="trackForm">
+      <label for="lrNumber">Enter LR Number:</label>
+      <input type="text" id="lrNumber" name="lrNumber" required />
+      <button type="submit">Track</button>
+    </form>
+    <div id="result"></div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <script>
+      // JavaScript for handling form submission and API request
+      document
+        .getElementById("trackForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          var lrNumber = document.getElementById("lrNumber").value.trim(); // Get LR number from input field
+
+          // Make API request
+          fetch("https://btob.api.delhivery.com/v2/track/" + lrNumber)
+            .then((response) => response.json())
+            .then((data) => {
+              // Handle response
+              displayTrackingDetails(data);
+            })
+            .catch((error) => {
+              // Handle error
+              console.error("Error fetching tracking details:", error);
+              document.getElementById("result").innerHTML =
+                "Error fetching tracking details. Please try again.";
+            });
+        });
+
+      // Function to display tracking details and update progress bar
+      function displayTrackingDetails(data) {
+        var resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = ""; // Clear previous result
+
+        // Check if tracking information is available
+        if (data) {
+          var html = "<h2>Tracking Details</h2>";
+          html += "<p><strong>Status:</strong> " + data.status + "</p>";
+          html += "<p><strong>Location:</strong> " + data.location + "</p>";
+          html += "<p><strong>Timestamp:</strong> " + data.timestamp + "</p>";
+          html += "<p><strong>LR Number:</strong> " + data.lrnum + "</p>";
+          html +=
+            "<p><strong>Origin City:</strong> " + data.origin_city + "</p>";
+          html +=
+            "<p><strong>Destination City:</strong> " +
+            data.destination_city +
+            "</p>";
+          html +=
+            "<p><strong>Scan Remark:</strong> " + data.scan_remark + "</p>";
+          html += "<p><strong>MWBN:</strong> " + data.mwbn + "</p>";
+          html +=
+            "<p><strong>Pickup Date:</strong> " + data.pickup_date + "</p>";
+          html +=
+            "<p><strong>Manifested Date:</strong> " +
+            data.manifested_date +
+            "</p>";
+          html +=
+            "<p><strong>Delivered Date:</strong> " +
+            data.delivered_date +
+            "</p>";
+          html +=
+            "<p><strong>Estimated Date:</strong> " +
+            data.estimated_date +
+            "</p>";
+          html +=
+            "<p><strong>Promised Delivery Date:</strong> " +
+            data.promised_delivery_date +
+            "</p>";
+          html +=
+            "<p><strong>Total Weight:</strong> " + data.total_weight + "</p>";
+          html +=
+            "<p><strong>Client Name:</strong> " + data.client_name + "</p>";
+          html +=
+            "<p><strong>Origin Branch:</strong> " + data.origin_branch + "</p>";
+          html +=
+            "<p><strong>Destination Branch:</strong> " +
+            data.destination_branch +
+            "</p>";
+          resultDiv.innerHTML = html;
+
+          // Update progress bar based on status
+          updateProgressBar(data.status);
+        } else {
+          resultDiv.innerHTML = "Tracking details not found.";
+        }
+      }
+
+      // Function to update progress bar
+      function updateProgressBar(status) {
+        var progressBar = document.getElementById("progressBar");
+        switch (status.toLowerCase()) {
+          case "manifested":
+            progressBar.style.width = "20%";
+            break;
+          case "in transit":
+            progressBar.style.width = "40%";
+            break;
+          case "pending":
+            progressBar.style.width = "60%";
+            break;
+          case "dispatched":
+            progressBar.style.width = "80%";
+            break;
+          case "delivered":
+            progressBar.style.width = "100%";
+            break;
+          case "not_picked":
+            progressBar.style.width = "10%"; // You can adjust this value as needed
+            break;
+          default:
+            progressBar.style.width = "0%"; // Reset progress bar if status is unknown
+            break;
+        }
+      }
+    </script>
+  </body>
 </html>
