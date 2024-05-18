@@ -10,11 +10,12 @@ import LoginOTP from "./Components/LoginOTP";
 import Flowchart from "./Components/Flowchart";
 import HappyClients from "./Components/HappyClients";
 import NavbarTrack from "./Components/NavbarTrack";
+import RateCalculator from "./Components/RateCalculator";
 function App() {
   return (
     <Router>
       <NextUIProvider>
-        <Subscription></Subscription>
+      <RateCalculator></RateCalculator>
       </NextUIProvider>
     </Router>
   );

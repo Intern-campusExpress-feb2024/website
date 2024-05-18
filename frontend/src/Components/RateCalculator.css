@@ -1,0 +1,206 @@
+/* Subscription.css */
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.relative {
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  top: -50px; /* Adjust this value to position the text above the rectangle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #760cc9, #d66904);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: xx-large;
+  font-weight: bolder;
+  margin-right: 10px; /* Space between "Express" and "Rate Calculator" */
+}
+
+.rc-text {
+  font-size: xx-large;
+  font-weight: bolder;
+  color: gray;
+}
+
+.rectangle {
+  width: 1200px;
+  height: 700px;
+  background-color: white;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Add some padding for better text placement */
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5rem; /* Adds a 5rem gap between the items */
+  height: 500px; /* Adjust the height as needed */
+  margin: 20px 20px 0 30px;
+  position: relative; /* Ensure relative positioning for absolute placeholders */
+}
+
+.input-container {
+  position: relative;
+  width: 300px; /* Match the width of the input divs */
+}
+
+.placeholder-text {
+  position: absolute;
+  top: -20px; /* Adjust this value to position the placeholder text above the input */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px; /* Adjust the font size as needed */
+  color: black; /* Placeholder text color */
+  text-align: left;
+  width: 100%;
+  padding-top: 5px;
+}
+
+.origin-pincode,
+.del-pincode,
+.qt,
+.ht,
+.wt,
+.length,
+.width,
+.total-qt {
+  width: 300px;
+  background-color: rgb(223, 225, 230);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  margin-top: 20px; /* Adds a 20px margin at the top of each div */
+}
+
+.origin-pincode input[type="text"],
+.del-pincode input[type="text"],
+.qt input[type="text"],
+.ht input[type="text"],
+.wt input[type="text"],
+.length input[type="text"],
+.width input[type="text"],
+.total-qt input[type="text"] {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: rgb(223, 225, 230);
+  font-size: large;
+  font-weight: normal;
+}
+
+.button {
+  width: 300px;
+  background: linear-gradient(180deg, #a030de, #5d1586);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  margin-top: 20px; /* Adds a 20px margin at the top of each div */
+  height: 60px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(180deg, #5d1586, #a030de);
+}
+
+@media (max-width: 1000px) {
+  .rectangle {
+    width: 600px;
+    height: 1500px;
+    margin-top: 1650px;
+  }
+  .text-container {
+    position: absolute;
+    top: 1550px; /* Adjust this value to position the text above the rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    line-height: 37px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .input-container {
+    width: 100%; /* Adjust width to be responsive */
+    margin-top: 20px;
+  }
+
+  .placeholder-text {
+    position: absolute;
+    top: -10px; /* Adjust this value to position the placeholder text above the input */
+    left: 0;
+    transform: none;
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight: normal;
+    color: black; /* Placeholder text color */
+    text-align: left;
+    width: 100%;
+    padding-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .origin-pincode,
+  .del-pincode,
+  .qt,
+  .ht,
+  .wt,
+  .length,
+  .width,
+  .total-qt,
+  .button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

@@ -23,3 +23,11 @@ node_modules/
 /frontend/src/Components/Navbar.js
 /frontend/src/Components/PinCode.css
 /frontend/src/Components/PinCode.js
+/frontend/src/Components/RateCalcPage.js
+/frontend/src/Components/RateCalc.js
+/frontend/src/Components/RateCalc.css
+/frontend/src/Components/Rc.js
+/frontend/src/Components/ShipRates.css
+/frontend/src/Components/ShipRates.js
+/frontend/src/Components/StatsCard.css
+/frontend/src/Components/StatsCard.js
