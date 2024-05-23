@@ -109,7 +109,7 @@
 
 .origin-pincode input[type="text"],
 .del-pincode input[type="text"],
-.qt input[type="text"],
+.qt input[type="number"],
 .ht input[type="text"],
 .wt input[type="text"],
 .length input[type="text"],
