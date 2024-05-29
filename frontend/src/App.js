@@ -11,11 +11,12 @@ import Flowchart from "./Components/Flowchart";
 import HappyClients from "./Components/HappyClients";
 import NavbarTrack from "./Components/NavbarTrack";
 import RateCalculator from "./Components/RateCalculator";
+import TrackOrder from "./Components/TrackOrder";
 function App() {
   return (
     <Router>
       <NextUIProvider>
-      <RateCalculator></RateCalculator>
+        <TrackOrder></TrackOrder>
       </NextUIProvider>
     </Router>
   );
