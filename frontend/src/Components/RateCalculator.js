@@ -168,8 +168,8 @@ const RateCalculator = () => {
           <p className="text-top1">your shipping </p>
           <p className="text-top2">costs now</p>
           <p className="text-top3">
-            Plan your eCommerce shipments in an instant.<br></br>Estimate courier
-            charges using the Campus Express rate calculator.
+            Plan your eCommerce shipments in an instant.<br></br>Estimate
+            courier charges using the Campus Express rate calculator.
           </p>
           <button class="button-top" onClick={handleCalculate}>
             <img src={image2} class="button-img" alt="Calculate"></img>
@@ -177,129 +177,130 @@ const RateCalculator = () => {
           </button>
         </div>
       </div>
-
-      {/* <div className="flex items-center justify-center h-screen">
-        <div className="relative">
-          <div className="text-container">
-            <p className="gradient-text">Express</p>
-            <p className="rc-text">Rate Calculator</p>
-          </div>
-          <div className="rectangle">
-            <div className="container">
-              <div className="input-container">
-                <div className="placeholder-text">Origin Pincode</div>
-                <div className="origin-pincode">
-                  <input
-                    type="text"
-                    id="origin-pincode"
-                    name="originPincode"
-                    value={originPincode}
-                    onChange={(e) => setOriginPincode(e.target.value)}
-                  />
+      <div className="bottom-section">
+        <div className="flex items-center justify-center h-screen">
+          <div className="relative">
+            <div className="text-container">
+              <p className="gradient-text">Express</p>
+              <p className="rc-text">Rate Calculator</p>
+            </div>
+            <div className="rectangle">
+              <div className="container">
+                <div className="input-container">
+                  <div className="placeholder-text">Origin Pincode</div>
+                  <div className="origin-pincode">
+                    <input
+                      type="text"
+                      id="origin-pincode"
+                      name="originPincode"
+                      value={originPincode}
+                      onChange={(e) => setOriginPincode(e.target.value)}
+                    />
+                  </div>
                 </div>
+                <div className="input-container">
+                  <div className="placeholder-text">Delivery Pincode</div>
+                  <div className="del-pincode">
+                    <input
+                      type="text"
+                      id="destination-pincode"
+                      name="destinationPincode"
+                      value={destinationPincode}
+                      onChange={(e) => setDestinationPincode(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="input-container">
+                  <div className="placeholder-text">Weight</div>
+                  <div className="wt">
+                    <input
+                      type="text"
+                      id="weight"
+                      name="weight"
+                      value={weight}
+                      onChange={(e) => setWeight(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="input-container">
+                  <div className="placeholder-text">Quantity</div>
+                  <div className="qt">
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      value={quantity}
+                      onChange={(e) => setQuantity(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="input-container">
+                  <div className="placeholder-text">Height</div>
+                  <div className="ht">
+                    <input
+                      type="text"
+                      id="height"
+                      name="height"
+                      value={height}
+                      onChange={(e) => setHeight(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="input-container">
+                  <div className="placeholder-text">Length</div>
+                  <div className="length">
+                    <input
+                      type="text"
+                      id="length"
+                      name="length"
+                      value={length}
+                      onChange={(e) => setLength(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="input-container">
+                  <div className="placeholder-text">Width</div>
+                  <div className="width">
+                    <input
+                      type="text"
+                      id="width"
+                      name="width"
+                      value={width}
+                      onChange={(e) => setWidth(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div className="input-container">
+                  <div className="placeholder-text">Total Quantity</div>
+                  <div className="total-qt">
+                    <input
+                      type="text"
+                      id="total-quantity"
+                      name="totalQuantity"
+                      value={totalQuantity}
+                      onChange={(e) => setTotalQuantity(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <button className="button" onClick={handleCalculate}>
+                  Calculate now
+                </button>
+                {pincodeError && <div className="error">{pincodeError}</div>}
+                {showBreakdown && (
+                  <div className="breakdown">
+                    <p>Base Rate: {baseRate}</p>
+                    <p>Docket Charge: {docketCharge}</p>
+                    <p>GST: {gst}</p>
+                    <p>ODA Charges: {odaCharges}</p>
+                    <p>Total: {total}</p>
+                    <p>Final Weight: {finalWeight}</p>
+                  </div>
+                )}
               </div>
-              <div className="input-container">
-                <div className="placeholder-text">Delivery Pincode</div>
-                <div className="del-pincode">
-                  <input
-                    type="text"
-                    id="destination-pincode"
-                    name="destinationPincode"
-                    value={destinationPincode}
-                    onChange={(e) => setDestinationPincode(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="input-container">
-                <div className="placeholder-text">Weight</div>
-                <div className="wt">
-                  <input
-                    type="text"
-                    id="weight"
-                    name="weight"
-                    value={weight}
-                    onChange={(e) => setWeight(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="input-container">
-                <div className="placeholder-text">Quantity</div>
-                <div className="qt">
-                  <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    value={quantity}
-                    onChange={(e) => setQuantity(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="input-container">
-                <div className="placeholder-text">Height</div>
-                <div className="ht">
-                  <input
-                    type="text"
-                    id="height"
-                    name="height"
-                    value={height}
-                    onChange={(e) => setHeight(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="input-container">
-                <div className="placeholder-text">Length</div>
-                <div className="length">
-                  <input
-                    type="text"
-                    id="length"
-                    name="length"
-                    value={length}
-                    onChange={(e) => setLength(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="input-container">
-                <div className="placeholder-text">Width</div>
-                <div className="width">
-                  <input
-                    type="text"
-                    id="width"
-                    name="width"
-                    value={width}
-                    onChange={(e) => setWidth(e.target.value)}
-                  />
-                </div>
-              </div>
-              <div className="input-container">
-                <div className="placeholder-text">Total Quantity</div>
-                <div className="total-qt">
-                  <input
-                    type="text"
-                    id="total-quantity"
-                    name="totalQuantity"
-                    value={totalQuantity}
-                    onChange={(e) => setTotalQuantity(e.target.value)}
-                  />
-                </div>
-              </div>
-              <button className="button" onClick={handleCalculate}>
-                Calculate now
-              </button>
-              {pincodeError && <div className="error">{pincodeError}</div>}
-              {showBreakdown && (
-                <div className="breakdown">
-                  <p>Base Rate: {baseRate}</p>
-                  <p>Docket Charge: {docketCharge}</p>
-                  <p>GST: {gst}</p>
-                  <p>ODA Charges: {odaCharges}</p>
-                  <p>Total: {total}</p>
-                  <p>Final Weight: {finalWeight}</p>
-                </div>
-              )}
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

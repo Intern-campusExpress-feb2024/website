@@ -20,7 +20,7 @@
 
 .text-container {
   position: absolute;
-  top: -50px; /* Adjust this value to position the text above the rectangle */
+  top: -100px; /* Adjust this value to position the text above the rectangle */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,6 @@
   align-items: center;
   justify-content: center;
   padding: 20px; /* Add some padding for better text placement */
-  box-sizing: border-box;
   text-align: center;
   position: relative;
 }
@@ -247,7 +246,7 @@
   font-size: 1rem;
   font-weight: normal;
   color: black;
- margin-top: -40px;
+  margin-top: -40px;
   margin-left: -1px;
 }
 .text-top2 {
@@ -273,7 +272,7 @@
   color: white;
   font-size: x-large;
   font-weight: bold;
-  margin-top:30px; /* Adjust this value if necessary */
+  margin-top: 30px; /* Adjust this value if necessary */
   height: 60px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -287,7 +286,9 @@
   margin-right: -60px; /* Adjust the space between image and text */
 }
 
-
 .button-top:hover {
   background: linear-gradient(180deg, #5d1586, #a030de);
+}
+.bottom-section {
+  margin-top: 200px;
 }
