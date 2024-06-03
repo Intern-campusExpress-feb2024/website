@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./RateCalculator.css";
 import pincodeData from "../Components/pincodeData";
-
+import image1 from "../assets/TIK MANIPAL (7) 2.png";
+import image2 from "../assets/ultra-realistic-3d-model-of-a-calculator-pronounced-buttons-casting-soft-shadows-emerging-from-a-d-897079567 1.png";
+import image3 from "../assets/upper_chunk.png";
 const INVALID_PINCODE = "Invalid Pincode";
 
 const RateCalculator = () => {
@@ -155,7 +157,28 @@ const RateCalculator = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
+      <div className="top-section">
+        <div>
+          <img src={image3} alt="" className="top-image3" />
+          <img src={image1} alt="tik" className="top-image1" />
+        </div>
+
+        <div className="text-container-top">
+          <p className="gradient-text-top">Determine</p>
+          <p className="text-top1">your shipping </p>
+          <p className="text-top2">costs now</p>
+          <p className="text-top3">
+            Plan your eCommerce shipments in an instant.<br></br>Estimate courier
+            charges using the Campus Express rate calculator.
+          </p>
+          <button class="button-top" onClick={handleCalculate}>
+            <img src={image2} class="button-img" alt="Calculate"></img>
+            Calculate Now
+          </button>
+        </div>
+      </div>
+
+      {/* <div className="flex items-center justify-center h-screen">
         <div className="relative">
           <div className="text-container">
             <p className="gradient-text">Express</p>
@@ -276,7 +299,7 @@ const RateCalculator = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

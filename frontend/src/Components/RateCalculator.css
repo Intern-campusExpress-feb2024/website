@@ -1,5 +1,3 @@
-/* Subscription.css */
-
 .flex {
   display: flex;
 }
@@ -203,4 +201,93 @@
     width: 100%;
     margin-top: 20px;
   }
+}
+.top-image1 {
+  width: 700px;
+  height: 500px;
+  margin-top: -600px;
+  margin-left: 700px;
+}
+
+.top-image3 {
+  width: 100vw;
+  height: 100vh;
+}
+
+.text-container-top {
+  position: absolute;
+  top: 150px; /* Adjust this value to position the text above the rectangle */
+  display: flex;
+  flex-direction: column; /* Ensure the text and button are stacked vertically */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-start; /* Align items to the left */
+  width: 100%;
+  margin-left: 100px;
+}
+
+.gradient-text-top {
+  background: linear-gradient(90deg, #760cc9, #d66904);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 4rem;
+  font-weight: bolder;
+  margin-right: 10px; /* Space between "Express" and "Rate Calculator" */
+}
+
+.text-top1 {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: black;
+  margin-top: -95px;
+  margin-left: 325px;
+}
+.text-top3 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: black;
+ margin-top: -40px;
+  margin-left: -1px;
+}
+.text-top2 {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: black;
+  padding-top: -5px;
+  margin-top: -30px;
+  padding-left: 4px; /* Use padding instead of margin to avoid moving the button */
+  width: 300px;
+  height: 100px;
+}
+
+.button-top {
+  width: 250px;
+  background: linear-gradient(180deg, #a030de, #5d1586);
+  border-radius: 20px;
+  border: 0px transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  margin-top:30px; /* Adjust this value if necessary */
+  height: 60px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-left: 0; /* Reset margin-left */
+}
+
+.button-img {
+  width: 100px;
+  height: 80px;
+  margin-top: 10px;
+  margin-right: -60px; /* Adjust the space between image and text */
+}
+
+
+.button-top:hover {
+  background: linear-gradient(180deg, #5d1586, #a030de);
 }

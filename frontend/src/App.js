@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <NextUIProvider>
-        <TrackOrder></TrackOrder>
+    <RateCalculator></RateCalculator>
       </NextUIProvider>
     </Router>
   );
