@@ -111,7 +111,7 @@
 .wt input[type="text"],
 .length input[type="text"],
 .width input[type="text"],
-.total-qt input[type="text"] {
+.total-qt input[type="number"] {
   width: 100%;
   height: 60px;
   padding: 10px;
@@ -201,6 +201,7 @@
     margin-top: 20px;
   }
 }
+
 .top-image1 {
   width: 700px;
   height: 500px;
@@ -289,6 +290,36 @@
 .button-top:hover {
   background: linear-gradient(180deg, #5d1586, #a030de);
 }
+
 .bottom-section {
   margin-top: 200px;
+}
+
+.gradient-text-result {
+  background: linear-gradient(90deg, #760cc9, #d66904);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+  font-weight: bolder;
+ padding-left: 10px;
+ padding-right: 10px;
+}
+.text-result1 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: black;
+  padding-top: 15px;
+  
+  align-items: center; 
+
+}
+.text-result2 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: black;
+ padding-top: 15px;
+  align-items: center; 
+
 }

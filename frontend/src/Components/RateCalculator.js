@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
 import "./RateCalculator.css";
 import pincodeData from "../Components/pincodeData";
 import image1 from "../assets/TIK MANIPAL (7) 2.png";
 import image2 from "../assets/ultra-realistic-3d-model-of-a-calculator-pronounced-buttons-casting-soft-shadows-emerging-from-a-d-897079567 1.png";
 import image3 from "../assets/upper_chunk.png";
+import littleman from "../assets/a-lifelike-pen-and-ink-illustration-of-an-artist-sketching-a-detailed-landscape-artist-located-at-f-119878496 1.png";
 const INVALID_PINCODE = "Invalid Pincode";
+
+Modal.setAppElement("#root"); // Set the app root element for accessibility
 
 const RateCalculator = () => {
   const [originPincode, setOriginPincode] = useState("");
@@ -14,7 +18,6 @@ const RateCalculator = () => {
   const [height, setHeight] = useState("");
   const [length, setLength] = useState("");
   const [width, setWidth] = useState("");
-  const [totalQuantity, setTotalQuantity] = useState("");
   const [baseRate, setBaseRate] = useState("");
   const [docketCharge, setDocketCharge] = useState("");
   const [gst, setGST] = useState("");
@@ -23,6 +26,7 @@ const RateCalculator = () => {
   const [odaCharges, setODACharges] = useState("");
   const [pincodeError, setPincodeError] = useState("");
   const [showBreakdown, setShowBreakdown] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const zoneChargesMatrix = [
     [24, 24, 25, 25, 28, 27, 29, 30, 32, 28, 26, 24, 28, 45, 32, 35],
@@ -101,7 +105,11 @@ const RateCalculator = () => {
 
     // Calculate the volumetric weight
     const volumetricWeight =
-      (length * height * width * parseFloat(quantity)) / 4000;
+      (parseFloat(length) *
+        parseFloat(height) *
+        parseFloat(width) *
+        parseFloat(quantity)) /
+      4000;
 
     // Compare volumetric weight with weight input and use the higher value
     const finalWeight = Math.max(weightInput, volumetricWeight, 20);
@@ -145,14 +153,21 @@ const RateCalculator = () => {
     setODACharges(odaChargesValue.toFixed(2));
     setFinalWeight(finalWeight.toFixed(2));
 
-    console.log({
-      baseRate: finalRate.toFixed(2),
-      docketCharge: docketChargeValue.toFixed(2),
-      gst: gstAmount.toFixed(2),
-      total: totalValue.toFixed(2),
-      finalWeight: finalWeight.toFixed(2),
-      odaCharges: odaChargesValue.toFixed(2),
-    });
+    setShowBreakdown(true);
+    setModalIsOpen(true); // Open the modal
+  };
+
+  const handleScrollToBottom = () => {
+    const bottomSection = document.getElementById("bottom-section");
+    if (bottomSection) {
+      bottomSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error("Element with id 'bottom-section' not found.");
+    }
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
 
   return (
@@ -171,13 +186,13 @@ const RateCalculator = () => {
             Plan your eCommerce shipments in an instant.<br></br>Estimate
             courier charges using the Campus Express rate calculator.
           </p>
-          <button class="button-top" onClick={handleCalculate}>
-            <img src={image2} class="button-img" alt="Calculate"></img>
+          <button className="button-top" onClick={handleScrollToBottom}>
+            <img src={image2} className="button-img" alt="Calculate"></img>
             Calculate Now
           </button>
         </div>
       </div>
-      <div className="bottom-section">
+      <div className="bottom-section" id="bottom-section">
         <div className="flex items-center justify-center h-screen">
           <div className="relative">
             <div className="text-container">
@@ -270,30 +285,59 @@ const RateCalculator = () => {
                     />
                   </div>
                 </div>
-                <div className="input-container">
-                  <div className="placeholder-text">Total Quantity</div>
-                  <div className="total-qt">
-                    <input
-                      type="text"
-                      id="total-quantity"
-                      name="totalQuantity"
-                      value={totalQuantity}
-                      onChange={(e) => setTotalQuantity(e.target.value)}
-                    />
-                  </div>
-                </div>
                 <button className="button" onClick={handleCalculate}>
                   Calculate now
                 </button>
                 {pincodeError && <div className="error">{pincodeError}</div>}
                 {showBreakdown && (
-                  <div className="breakdown">
-                    <p>Base Rate: {baseRate}</p>
-                    <p>Docket Charge: {docketCharge}</p>
-                    <p>GST: {gst}</p>
-                    <p>ODA Charges: {odaCharges}</p>
-                    <p>Total: {total}</p>
-                    <p>Final Weight: {finalWeight}</p>
+                  <div
+                    style={{
+                      padding: "16px",
+                      borderRadius: "18px",
+                      background: "linear-gradient(110deg, #ffffff, #D276FC)",
+                      width: "500px",
+                      height: "500px",
+                      marginTop: "700px",
+                      flexWrap: "wrap",
+                      flexDirection: "column",
+                      alignContent: "center",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginLeft: "-800px",
+                    }}
+                  >
+                    <div className="flex flex-row center">
+                      <p className="text-result1">Your</p>
+                      <p className="gradient-text-result">Total</p>
+                      <p className="text-result2">Cost</p>
+                    </div>
+                    <p style={{ margin: "8px 0" }}>Base Rate: {baseRate}</p>
+                    <p style={{ margin: "8px 0" }}>
+                      Docket Charge: {docketCharge}
+                    </p>
+                    <p style={{ margin: "8px 0" }}>
+                      Final Weight: {finalWeight}
+                    </p>
+                    <p style={{ margin: "8px 0" }}>ODA Charges: {odaCharges}</p>
+                    <p style={{ margin: "8px 0" }}>GST: {gst}</p>
+                    <p
+                      style={{
+                        margin: "8px 0",
+                        fontWeight: "bolder",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      Total: {total}
+                    </p>
+                    <img
+                      src={littleman}
+                      style={{
+                        width: "250px",
+                        height: "150px",
+                        marginLeft:"250px",
+                        marginTop: "-250px"
+                      }}
+                    ></img>
                   </div>
                 )}
               </div>
@@ -301,6 +345,26 @@ const RateCalculator = () => {
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Rate Breakdown"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <h2>Rate Breakdown</h2>
+        {showBreakdown && (
+          <div className="breakdown">
+            <p>Base Rate: {baseRate}</p>
+            <p>Docket Charge: {docketCharge}</p>
+            <p>GST: {gst}</p>
+            <p>ODA Charges: {odaCharges}</p>
+            <p>Total: {total}</p>
+            <p>Final Weight: {finalWeight}</p>
+          </div>
+        )}
+        <button onClick={closeModal}>Close</button>
+      </Modal>
     </>
   );
 };
